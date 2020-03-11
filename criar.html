@@ -1,0 +1,53 @@
+<SCRIPT src="sokoban.js" type=text/javascript>/*http://www.c420.com.br*/</SCRIPT>
+<script>
+function  seleciona(obj){
+	document.getElementById('selecionada').src = obj.src;
+}
+function criar(pCol,pRow){
+	var imagem = "<img src='bricks.gif' width='32' height='32' onclick='troca(this)' ";
+	document.getElementById('mapa').innerHTML = "";
+	for(var row = 0 ; row < pRow; row++){
+		for(var col = 0 ; col < pCol; col++){
+			document.getElementById('mapa').innerHTML += imagem+" id='wgr"+row+"c"+col+"' name='wgr"+row+"c"+col+"'/>";
+		}
+		document.getElementById('mapa').innerHTML += "<br>\n\r";
+	}
+}
+function troca(obj){
+	obj.src = document.getElementById('selecionada').src;
+}
+
+function code(obj){
+  var mapa = document.getElementById('mapa').innerHTML;	
+  while(mapa.indexOf("onclick=\"troca(this)\"")>-1){
+    mapa = mapa.replace("onclick=\"troca(this)\"","")
+  }
+	document.getElementById('code').innerHTML = mapa;	
+}
+</script>
+<p>Criar Mapa de Jogo<br />
+Novo Colunas <input id="col" value="6" /> Linhas<input id="row" value="7" /> : 
+<button id="criar" onclick="criar(document.getElementById('col').value,document.getElementById('row').value)">Criar</button><br>
+Opções:&nbsp;
+<img src="base__.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="bonekb.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="boneki.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="branco.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="bricks.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="caixa_.gif" width="32" height="32" onclick="seleciona(this)" />&nbsp;
+<img src="caixab.gif" width="32" height="32" onclick="seleciona(this)" /><br />
+Imagem selecionada: <img id="selecionada" src="br.gif" width="32" height="32" />
+<br><br>  
+<div id="mapa">
+<img src="bricks.gif" onclick="troca(this)" id="wgr0c0" name="wgr0c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr0c1" name="wgr0c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr0c2" name="wgr0c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr0c3" name="wgr0c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr0c4" name="wgr0c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr0c5" name="wgr0c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr1c0" name="wgr1c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr1c1" name="wgr1c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr1c2" name="wgr1c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr1c3" name="wgr1c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr1c4" name="wgr1c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr1c5" name="wgr1c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr2c0" name="wgr2c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr2c1" name="wgr2c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr2c2" name="wgr2c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr2c3" name="wgr2c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr2c4" name="wgr2c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr2c5" name="wgr2c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr3c0" name="wgr3c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr3c1" name="wgr3c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr3c2" name="wgr3c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr3c3" name="wgr3c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr3c4" name="wgr3c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr3c5" name="wgr3c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr4c0" name="wgr4c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr4c1" name="wgr4c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr4c2" name="wgr4c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr4c3" name="wgr4c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr4c4" name="wgr4c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr4c5" name="wgr4c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr5c0" name="wgr5c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr5c1" name="wgr5c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr5c2" name="wgr5c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr5c3" name="wgr5c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr5c4" name="wgr5c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr5c5" name="wgr5c5" height="32" width="32"><br>
+<img src="bricks.gif" onclick="troca(this)" id="wgr6c0" name="wgr6c0" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr6c1" name="wgr6c1" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr6c2" name="wgr6c2" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr6c3" name="wgr6c3" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr6c4" name="wgr6c4" height="32" width="32"><img src="bricks.gif" onclick="troca(this)" id="wgr6c5" name="wgr6c5" height="32" width="32"><br>
+</div>
+<div id="rep"></div>
+<button id="criar" onclick="code()">Mostra codigo</button><br>
+<textarea name="code" id="code" rows="10" cols="60"></textarea> 
+</p>
